@@ -16,12 +16,61 @@
   }
 }
 
+@font-face {
+  font-weight: 500;
+  font-family: "Riposte";
+  src: url("https://db.onlinewebfonts.com/t/e6cc3f984c7f4a23ff39d7056f1e49a3.eot");
+  src: url("https://db.onlinewebfonts.com/t/e6cc3f984c7f4a23ff39d7056f1e49a3.eot?#iefix")
+  format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/e6cc3f984c7f4a23ff39d7056f1e49a3.woff2")
+  format("woff2"),
+  url("https://db.onlinewebfonts.com/t/e6cc3f984c7f4a23ff39d7056f1e49a3.woff")
+  format("woff"),
+  url("https://db.onlinewebfonts.com/t/e6cc3f984c7f4a23ff39d7056f1e49a3.ttf")
+  format("truetype"),
+  url("https://db.onlinewebfonts.com/t/e6cc3f984c7f4a23ff39d7056f1e49a3.svg#Riposte-SemiBold")
+  format("svg");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "Riposte";
+  src: url("https://db.onlinewebfonts.com/t/fbf16502201349bcb541fbbe5a730090.eot");
+  src: url("https://db.onlinewebfonts.com/t/fbf16502201349bcb541fbbe5a730090.eot?#iefix")
+  format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/fbf16502201349bcb541fbbe5a730090.woff2")
+  format("woff2"),
+  url("https://db.onlinewebfonts.com/t/fbf16502201349bcb541fbbe5a730090.woff")
+  format("woff"),
+  url("https://db.onlinewebfonts.com/t/fbf16502201349bcb541fbbe5a730090.ttf")
+  format("truetype"),
+  url("https://db.onlinewebfonts.com/t/fbf16502201349bcb541fbbe5a730090.svg#Riposte-Regular")
+  format("svg");
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: "Riposte";
+  src: url("https://db.onlinewebfonts.com/t/2ec6093db27996dffb7a91e816a11999.eot");
+  src: url("https://db.onlinewebfonts.com/t/2ec6093db27996dffb7a91e816a11999.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/2ec6093db27996dffb7a91e816a11999.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/2ec6093db27996dffb7a91e816a11999.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/2ec6093db27996dffb7a91e816a11999.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/2ec6093db27996dffb7a91e816a11999.svg#Riposte-Light")
+      format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Riposte", sans-serif;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
