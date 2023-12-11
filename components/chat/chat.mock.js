@@ -23,7 +23,7 @@ export const CHAT_MESSAGES = [
   {
     id: 2,
     author: "Stine",
-    message: "Den fagren var bare så lekker!",
+    message: "Den fagren var bare så lekker!💕",
   },
   {
     id: 3,

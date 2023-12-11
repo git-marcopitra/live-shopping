@@ -4,10 +4,10 @@ import LiveStream from "@/views";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Home = () => (
+const HomePage = () => (
   <main className={inter.className}>
     <LiveStream />
   </main>
 );
 
-export default Home;
+export default HomePage;

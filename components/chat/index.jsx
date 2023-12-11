@@ -4,7 +4,7 @@ import { CHAT_MESSAGES, LONG_STICKY_MESSAGE } from "./chat.mock";
 import BallonMessage from "./ballon-message";
 
 const Chat = () => {
-  const data = CHAT_MESSAGES.slice(-4);
+  const data = CHAT_MESSAGES.slice(-4) ;
   const stickyMessage = LONG_STICKY_MESSAGE;
 
   return (
