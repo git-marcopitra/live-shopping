@@ -1,4 +1,10 @@
-import { Chat, Navigation, ProgressBar, Video } from "@/components";
+import {
+  Chat,
+  Navigation,
+  PictureInPicture,
+  ProgressBar,
+  Video,
+} from "@/components";
 import { ChevronDownSVG, TimesSVG } from "@/components/svg";
 import { Box } from "@/elements";
 import { useRef, useState } from "react";
@@ -23,45 +29,20 @@ const LiveStream = () => {
 
   return (
     <Box
+      inset="0"
       position="fixed"
-      display={hide ? "none" : "block"}
-      {...(pictureInPicture
-        ? {
-            bottom: "1rem",
-            right: "1rem",
-            overflow: "hidden",
-            borderRadius: "1rem",
-            onClick: () => setPictureInPicture(false),
-          }
-        : { inset: "0" })}
+      display={pictureInPicture ? "none" : "block"}
     >
       <Video
         videoRef={videoRef}
         progressRef={progressRef}
         progressBarRef={progressBarRef}
-        pictureInPicture={pictureInPicture}
       />
-      <Box
-        width="2rem"
-        height="2rem"
-        display="flex"
-        bg="#0000001A"
-        position="absolute"
-        borderRadius="50%"
-        alignItems="center"
-        justifyContent="center"
-        top={pictureInPicture ? "0.5rem" : "1rem"}
-        right={pictureInPicture ? "0.5rem" : "1rem"}
-        onClick={() =>
-          pictureInPicture ? setHide(true) : setPictureInPicture(true)
-        }
-      >
-        {pictureInPicture ? (
-          <TimesSVG maxHeight="1rem" maxWidth="1rem" width="1rem" />
-        ) : (
-          <ChevronDownSVG maxHeight="1rem" maxWidth="1rem" width="100%" />
-        )}
-      </Box>
+      <PictureInPicture
+        videoRef={videoRef}
+        pictureInPicture={pictureInPicture}
+        setPictureInPicture={setPictureInPicture}
+      />
       {!pictureInPicture && (
         <Box
           bottom="0"
