@@ -8,9 +8,9 @@ const ChevronDown = ({ maxWidth, maxHeight, ...props }) => (
     <path
       d="M1 1.18909L7 7.18909L13 1.18909"
       stroke="white"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
