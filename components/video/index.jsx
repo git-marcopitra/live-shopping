@@ -1,7 +1,9 @@
 import { Box } from "@/elements";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { PauseSVG, PlaySVG } from "../svg";
+import PlayNPause from "./play-n-pause";
 
-const Video = ({ videoRef, progressBarRef, progressRef }) => {
+const Video = ({ videoRef, progressBarRef, progressRef, pictureInPicture }) => {
   useEffect(() => {
     const video = videoRef.current;
     const progress = progressRef.current;
@@ -28,22 +30,25 @@ const Video = ({ videoRef, progressBarRef, progressRef }) => {
   }, []);
 
   return (
-    <Box
-      loop
-      muted
-      autoPlay
-      as="video"
-      width="100vw"
-      height="100vh"
-      ref={videoRef}
-      src="/video.mp4"
-      type="video/mp4"
-      poster="/poster.png"
-    >
-      <p>
-        Your browser does not support HTML video. Here is a
-        <a href="/video.mp4">link to the video</a> instead.
-      </p>
+    <Box position="relative">
+      <Box
+        loop
+        muted
+        autoPlay
+        as="video"
+        ref={videoRef}
+        src="/video.mp4"
+        type="video/mp4"
+        poster="/poster.png"
+        width={pictureInPicture ? "10rem" : "100vw"}
+        height={pictureInPicture ? "17.7rem" : "100vh"}
+      >
+        <p>
+          Your browser does not support HTML video. Here is a
+          <a href="/video.mp4">link to the video</a> instead.
+        </p>
+      </Box>
+      {pictureInPicture && <PlayNPause videoRef={videoRef} pictureInPicture={pictureInPicture} />}
     </Box>
   );
 };

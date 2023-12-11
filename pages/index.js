@@ -1,13 +1,18 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import LiveStream from "@/views";
+import { Box } from "@/elements";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const HomePage = () => (
-  <main className={inter.className}>
+  <Box
+    as="main"
+    minHeight="100vh"
+    className={inter.className}
+    background="linear-gradient(0deg, #888, #EEE)"
+  >
     <LiveStream />
-  </main>
+  </Box>
 );
 
 export default HomePage;
