@@ -1,10 +1,10 @@
 import { Box } from "@/elements";
-import { ChevronDownSVG, TimesSVG } from "../svg";
+import { ChevronDownSVG, NoSoundSVG, TimesSVG } from "../svg";
 import { useEffect } from "react";
 
 const PictureInPicture = ({
+  isMute,
   videoRef,
-  pictureInPicture,
   setPictureInPicture,
 }) => {
   const handlePIP = async (e) => {
@@ -53,24 +53,32 @@ const PictureInPicture = ({
   }, []);
 
   return (
-    <Box
-      width="2rem"
-      height="2rem"
-      display="flex"
-      bg="#0000001A"
-      position="absolute"
-      borderRadius="50%"
-      alignItems="center"
-      onClick={handlePIP}
-      justifyContent="center"
-      top={pictureInPicture ? "0.5rem" : "1rem"}
-      right={pictureInPicture ? "0.5rem" : "1rem"}
-    >
-      {pictureInPicture ? (
-        <TimesSVG maxHeight="1rem" maxWidth="1rem" width="1rem" />
-      ) : (
-        <ChevronDownSVG maxHeight="1rem" maxWidth="1rem" width="100%" />
+    <Box top="1rem" right="1rem" position="absolute" display="flex" gap="0.5rem">
+      {isMute && (
+        <Box
+          width="2rem"
+          height="2rem"
+          display="flex"
+          bg="#0000001A"
+          borderRadius="50%"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <NoSoundSVG maxHeight="1rem" maxWidth="1rem" width="100%" />
+        </Box>
       )}
+      <Box
+        width="2rem"
+        height="2rem"
+        display="flex"
+        bg="#0000001A"
+        borderRadius="50%"
+        alignItems="center"
+        onClick={handlePIP}
+        justifyContent="center"
+      >
+        <ChevronDownSVG maxHeight="1rem" maxWidth="1rem" width="100%" />
+      </Box>
     </Box>
   );
 };

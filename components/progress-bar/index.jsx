@@ -1,48 +1,58 @@
 import { Box } from "@/elements";
+import { useInstallProgressBar } from "@/hooks/use-install-progress-bar";
 
-const ProgressBar = ({ onHandleProgress, progressBarRef, progressRef }) => (
-  <Box
-    ref={progressRef}
-    position="relative"
-    onMouseDown={onHandleProgress}
-    nHover={{
-      ".progressBarPointer": {
-        transform: "scale(200%)",
-      },
-    }}
-  >
+const ProgressBar = ({
+  videoRef,
+  progressRef,
+  progressBarRef,
+  onHandleProgress,
+}) => {
+  useInstallProgressBar(videoRef, progressRef, progressBarRef);
+
+  return (
     <Box
-      min="0"
-      my="1rem"
-      value="0"
-      width="100%"
-      border="none"
-      bg="#ffffff66"
-      display="block"
-      height="0.25rem"
-      borderRadius="2px"
+      ref={progressRef}
+      position="relative"
+      onMouseDown={onHandleProgress}
+      nHover={{
+        ".progressBarPointer": {
+          transform: "scale(200%)",
+        },
+      }}
     >
       <Box
-        width="0%"
-        bg="#3FA496"
-        display="flex"
+        min="0"
+        my="1rem"
+        value="0"
+        width="100%"
+        border="none"
+        bg="#ffffff66"
+        display="block"
         height="0.25rem"
-        alignItems="center"
-        ref={progressBarRef}
-        justifyContent="flex-end"
+        borderRadius="2px"
       >
         <Box
-          draggable
+          width="0%"
           bg="#3FA496"
-          width="0.4rem"
-          height="0.825rem"
-          borderRadius="0.25rem"
-          onDrag={onHandleProgress}
-          className="progressBarPointer"
-        />
+          display="flex"
+          height="0.25rem"
+          alignItems="center"
+          ref={progressBarRef}
+          justifyContent="flex-end"
+        >
+          <Box
+            draggable
+            bg="#3FA496"
+            width="0.4rem"
+            height="0.825rem"
+            borderRadius="0.25rem"
+            onDrag={onHandleProgress}
+            className="progressBarPointer"
+          />
+        </Box>
       </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 export default ProgressBar;

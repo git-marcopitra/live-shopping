@@ -7,14 +7,14 @@ const Shirt = ({ maxWidth, maxHeight, ...props }) => (
   >
     <path
       d="M9.61554 3.48282L3.38477 9.71359"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="0.778846"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M3.38477 3.48282L9.61554 9.71359"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="0.778846"
       strokeLinecap="round"
       strokeLinejoin="round"
