@@ -72,8 +72,8 @@ const VideoOverlay = ({
           />
           <Navigation
             toggleChat={onToggleChat}
+            progressRef={progressRef}
             toggleSound={onToggleMute}
-            progress={videoRef.current?.currentTime}
           />
         </Box>
       )}

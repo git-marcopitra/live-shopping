@@ -1,4 +1,4 @@
-import { ProgressBar, Video } from "@/components";
+import { Video } from "@/components";
 import { Box } from "@/elements";
 import { useRef, useState } from "react";
 import VideoOverlay from "./video-overlay";

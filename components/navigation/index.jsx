@@ -9,9 +9,11 @@ import { Box } from "@/elements";
 import { useState } from "react";
 import MoreMenu from "../menu/more-menu";
 
-const Navigation = ({ progress, toggleChat, toggleSound }) => {
+const Navigation = ({ progressRef, toggleChat, toggleSound }) => {
   const sendHeart = () => {};
   const [content, setContent] = useState(null);
+  const [isShareTime, setShareTime] = useState(false);
+  const [currentTime, setCurrentTime] = useState(null);
 
   return (
     <>
@@ -40,7 +42,13 @@ const Navigation = ({ progress, toggleChat, toggleSound }) => {
             <MoreMenu
               info={{
                 share: { action: () => setContent("share") },
-                shareAt: { action: () => setContent("shareAt"), add: progress },
+                shareAt: {
+                  add: currentTime,
+                  action: () => {
+                    setShareTime(true);
+                    setContent("share");
+                  },
+                },
                 chat: {
                   action: () => {
                     toggleChat();
@@ -71,7 +79,10 @@ const Navigation = ({ progress, toggleChat, toggleSound }) => {
           height="1.5rem"
           alignItems="center"
           justifyContent="center"
-          onClick={() => setContent("menu")}
+          onClick={() => {
+            setContent("menu");
+            setCurrentTime(progressRef.current?.value);
+          }}
         >
           <DotsSVG maxWidth="1.5rem" maxHeight="1.5rem" width="100%" />
         </Box>
